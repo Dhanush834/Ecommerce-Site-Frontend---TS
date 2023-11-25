@@ -2,13 +2,13 @@ import { ReactElement, createContext, useEffect, useState } from "react"
 
 //----------- Types ----------
 
-type ProductsType = {
+export type ProductsType = {
     sku:string,
     name:string,
     price:number
 }
 
-type ProductsContextType = {
+export type ProductsContextType = {
     products:ProductsType[]
 }
 
@@ -26,7 +26,7 @@ const initContextState :ProductsContextType = { products:[] } // Zero products i
 
 // ------- Context ----------------
 
-const ProductsContext = createContext<ProductsContextType>(initContextState) // Create a context of products
+export const ProductsContext = createContext<ProductsContextType>(initContextState) // Create a context of products
 
 export const ProductsProvider = ({children}:ChildrenType) : ReactElement => {
 

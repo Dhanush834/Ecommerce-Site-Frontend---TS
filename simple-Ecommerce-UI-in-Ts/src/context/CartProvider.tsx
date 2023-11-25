@@ -20,7 +20,7 @@ const REDUCER_ACTION_TASKS = {
 
 export type ReducerActionType = typeof REDUCER_ACTION_TASKS
 
-type ReducerAction = {
+export type ReducerAction = {
     type:string,
     payload?:CartItemType
 }
@@ -110,7 +110,7 @@ const reducer = (state:CartStateType,action:ReducerAction) : CartStateType => {
 
 
 
-//--------- Functions for providing values for provider --------------
+//--------- Function for providing values for provider --------------
 const useCartContext = (initCartState:CartStateType) =>{
 
     const [state,dispatch] = useReducer(reducer,initCartState)
@@ -152,3 +152,12 @@ const initCartContextState: UseCartContextType = {
 
 const CartContext = createContext<UseCartContextType>(initCartContextState)
 
+export const CartProvider = ({ children }: ChildrenType): ReactElement => {
+    return (
+        <CartContext.Provider value={useCartContext(initCartState)}>
+            {children}
+        </CartContext.Provider>
+    )
+}
+
+export default CartContext;
