@@ -1,4 +1,4 @@
-import { ReactElement, createContext, useEffect, useState } from "react"
+import { ReactElement, createContext, useState } from "react"
 
 //----------- Types ----------
 
@@ -74,7 +74,8 @@ export const ProductsProvider = ({children}:ChildrenType) : ReactElement => {
 
     // },[])
 
-    const [products,setProducts] = useState(initProductState)
+    const [products] = useState(initProductState)
+    
 
     return(
         <ProductsContext.Provider value={{products}}>

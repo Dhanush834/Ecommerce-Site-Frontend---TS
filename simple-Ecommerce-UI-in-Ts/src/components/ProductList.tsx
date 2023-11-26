@@ -1,8 +1,6 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import useProducts from '../hooks/useProducts'
 import useCart from '../hooks/useCart'
-import { ProductsContextType } from '../context/ProductsProvider'
-import Cart from './Cart'
 import Product from './Product'
 
 
